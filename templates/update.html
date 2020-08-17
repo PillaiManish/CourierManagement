@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Pillai Courier Service</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Home</h1>
+            <h1>Track</h1>
+            <h1>Sign In/Register</h1>
+            <hr>
+
+        </header>
+
+        <form method="POST">
+        <label>UPDATE</label>
+        <br>
+        {% csrf_token %}
+            <input type ="number" name="id" id='id' placeholder="Enter ID">
+            <br>
+            <input type ="text" name='status' id='status' placeholder="Enter Status">
+            <br>
+            <input type ="text" name="remark" id="remark" placeholder="Enter Remark">
+            <br>
+            <input type='Submit' value='Submit'>
+
+        </form>
+
+        {% if msg %}
+        <h3>{{msg}}</h3>
+        {% endif %}
+
+
+    </body>
+</html>

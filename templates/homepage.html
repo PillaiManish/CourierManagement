@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Pillai Courier Service</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Home</h1>
+            <h1><a href='/track'>Track</a></h1>
+            <h1>Sign In/Register</h1>
+            {% for group in user.groups.all %} {%if group.name == 'Agents' %} 
+            <h1>Add New</h1>
+            <h1>Update</h1>
+
+
+            {%endif%} {%endfor%}
+
+        </header>
+
+
+
+    </body>
+</html>

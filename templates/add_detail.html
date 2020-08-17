@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Pillai Courier Service</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Home</h1>
+            <h1>Track</h1>
+            <h1>Sign In/Register</h1>
+
+            {% if request.user.is_authenticated %}
+            <h1>Logout<h1>
+                {% endif %}
+            <hr>
+
+        </header>
+
+        <form method="POST">
+        <label>ADD NEW</label>
+        <br>
+        {% csrf_token %}
+            <input type ="text" name="from_name" id="from_name" placeholder="Enter From Name">
+            <br>
+            <input type ="text" name='from_address' id='from_address' placeholder="Enter From Address">
+            <br>
+            <input type ="number" name="from_contact" id="from_contact" placeholder="Enter From Contact">
+            <br>
+            <input type ="text" name="to_name" id="to_name" placeholder="Enter To Name">
+            <br>
+            <input type ="text" name='to_address' id='to_address' placeholder="Enter To Address">
+            <br>
+            <input type ="number" name="to_contact" id="to_contact" placeholder="Enter To Contact">
+            <br>
+
+            <input type ="email" name="to_email" id="to_email" placeholder="Enter To Emaid_ID">
+            <br>
+
+            <input type ="number" name="parcel_weight" id="parcel_weight" placeholder="Enter Parcel Weight">
+            <br>
+            <input type='Submit' value='Submit'>
+
+        </form>
+
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>TRACKING ID </th>
+                </tr>
+                </thead>
+            <tbody>
+                <tr>
+                <td>{{current.id}}</td>
+            </tr>
+        </tbody>
+          </table>
+
+
+
+
+    </body>
+</html>

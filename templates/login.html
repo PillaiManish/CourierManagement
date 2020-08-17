@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Pillai Courier Service</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Home</h1>
+            <h1>Track</h1>
+            <h1>Sign In/Register</h1>
+            <hr>
+
+        </header>
+
+        <form method="POST">
+        <label>Login</label>
+        <br>
+        {% csrf_token %}
+            <input type ="text" name="username" id="username" placeholder="Enter User Name">
+            <br>
+            <input type ="password" name='password' id='password' placeholder="Enter Password">
+
+            <input type='Submit' value='Submit'>
+
+        </form>
+
+    </body>
+</html>

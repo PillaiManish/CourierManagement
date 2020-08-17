@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Pillai Courier Service</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Home</h1>
+            <h1>Track</h1>
+            <h1>Sign In/Register</h1>
+            <hr>
+
+        </header>
+
+        <form method="POST">
+        <label>Enter the consignment no.</label>
+        {% csrf_token %}
+            <input type ="number" name="code_no" id="code_no" value="code_no" placeholder="Enter Consignment No">
+
+            <input type='Submit' value='Submit'>
+
+        </form>
+            <h3>Date Booked : {{details.date_booked}}</h3>
+            <br>
+            <h3>From : {{details.from_address}}</h3>
+            <br>
+            <h3>To : {{details.to_address}}</h3>
+
+            <table border="1px">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Place</th>
+                    <th>Status</th>
+
+                    <th>Remarks</th>
+                </tr>
+                </thead>
+            <tbody>
+            {% for cor in courier %}
+                <tr>
+                <td>{{cor.date_time}}</td>
+                <td>{{cor.place}}</td>
+                <td>{{cor.status}}</td>
+
+                <td>{{cor.remarks}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+          </table>
+
+
+    </body>
+</html>
